@@ -1,24 +1,50 @@
-# README
+# Collaborative Text Editor
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install Ruby:
 
-Things you may want to cover:
+[Download Ruby](https://rubyinstaller.org/downloads/)
 
-* Ruby version
+## Install Rails using gem:
 
-* System dependencies
+```bash
+gem install rails
+```
 
-* Configuration
+##  Setup Rails Project
 
-* Database creation
+# Create new Rails project with PostgreSQL
+```bash
+rails new collaborative-editor --database=postgresql --webpack=react
+```
 
-* Database initialization
+## Install additional dependencies:
 
-* How to run the test suite
+```bash
+bundle add redis
+bundle add sidekiq
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## To create test and development databases:
 
-* Deployment instructions
+```bash
+rails db:create
 
-* ...
+rails db:migrate
+```
+
+## Example usage:
+
+```bash
+# Creating a document
+doc = Document.create(content: "Hello", version: 1)
+
+# Inserting text
+operation = OpenStruct.new(type: :insert, position: 5, text: " World")
+doc.apply_operation(operation)
+# Result: "Hello World"
+
+# Deleting text
+operation = OpenStruct.new(type: :delete, position: 5, length: 6)
+doc.apply_operation(operation)
+# Result: "Hello"
+```
