@@ -48,3 +48,10 @@ operation = OpenStruct.new(type: :delete, position: 5, length: 6)
 doc.apply_operation(operation)
 # Result: "Hello"
 ```
+## Let's set up the WebSocket channel for real-time communication. We'll create this step by step
+
+# First, generate the Action Cable channel:
+```bash
+rails generate channel Document
+```
+
