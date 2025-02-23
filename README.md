@@ -63,9 +63,8 @@ app/operations/delete_operation.rb
 app/operations/transform_utility.rb
 ```
 ## These operations handle:
-
-### Inserting text at a specific position
-### Deleting text from a specific position
-### Transforming operations when they conflict
-### Handling overlapping deletions
-### Maintaining consistency across all clients
+Inserting text at a specific position <br>
+Deleting text from a specific position<br>
+Transforming operations when they conflict<br>
+Handling overlapping deletions<br>
+Maintaining consistency across all clients
