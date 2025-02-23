@@ -55,3 +55,17 @@ doc.apply_operation(operation)
 rails generate channel Document
 ```
 
+## We'll create two main operation types: Insert and Delete for our collaborative text editor
+
+```bash
+app/operations/insert_operation.rb
+app/operations/delete_operation.rb
+app/operations/transform_utility.rb
+```
+## These operations handle:
+
+### Inserting text at a specific position
+### Deleting text from a specific position
+### Transforming operations when they conflict
+### Handling overlapping deletions
+### Maintaining consistency across all clients

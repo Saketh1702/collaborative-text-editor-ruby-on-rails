@@ -30,7 +30,7 @@ class Document < ApplicationRecord
     # Inserts new text at specified position
     # Joins it back into a string
 
-    def insert_text(operation):
+    def insert_text(operation)
         content_array = content.chars
         content_array.insert(operation.position, operation.text)
         self.content = content_array.join
@@ -42,9 +42,9 @@ class Document < ApplicationRecord
     # Removes specified characters
     # Joins it back into a string
 
-    def delete_text(operation):
+    def delete_text(operation)
         content_array = content.chars
         content_array.slice!(operation.position, operation.length)
         self.content = content_array.join
     end
-        
+end
